@@ -1,0 +1,27 @@
+body {
+  display: flex;
+  background: yellow;
+  text-align: center;
+  flex-direction: column;
+}
+
+#head {
+  background: white;
+  text-align: center;
+  width: 100%;
+  font-family: futura;
+}
+#newcountdown {
+  font-size: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  font-family: futura;
+}
+
+#image {
+  font-size: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+}
