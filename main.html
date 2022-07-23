@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>LEGOLAND Countdown</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <script>
+      CountDownTimer('09/23/2022 1:00 PM', 'newcountdown');
+
+      function CountDownTimer(dt, id) {
+        var end = new Date(dt);
+        var _second = 1000;
+        var _minute = _second * 60;
+        var _hour = _minute * 60;
+        var _day = _hour * 24;
+        var timer;
+
+        function showRemaining() {
+          var now = new Date();
+          var distance = end - now;
+          if (distance < 0) {
+            clearInterval(timer);
+            document.getElementById(id).innerHTML = 'TIME FOR LEGOLAND!';
+            return;
+          }
+          var days = Math.floor(distance / _day);
+          var hours = Math.floor((distance % _day) / _hour);
+          var minutes = Math.floor((distance % _hour) / _minute);
+          var seconds = Math.floor((distance % _minute) / _second);
+          document.getElementById(id).innerHTML = days + 'days ';
+          document.getElementById(id).innerHTML += hours + 'hrs ';
+          document.getElementById(id).innerHTML += minutes + 'mins ';
+          document.getElementById(id).innerHTML += seconds + 'secs';
+        }
+        timer = setInterval(showRemaining, 1000);
+      }
+    </script>
+    <div id="head">
+      <h1>Time Until LEGOLAND</h1>
+    </div>
+    <br>
+    <div id="newcountdown"></div>
+    <div id="image">
+      <img src="https://cache.undercovertourist.com/media_file/legoland-florida-566912-161533e2ed5.JPG">
+    </div>
+  </body>
+</html>
